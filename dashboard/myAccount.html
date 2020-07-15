@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/custom/styles.css">
+    <link rel="stylesheet" href="../public/icons/fontawesome/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+
+    <script src="../public/bootstrap/popper.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="../public/custom/chart.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col col-sm-2 side-bar-bg">
+            <div class="username-div">
+                <h4>username</h4>
+            </div>
+            <ul class="list">
+                <li onclick="addActiveClass(this, 'home')" class="list-item active-item">
+                    <i class="fas fa-home"></i>
+                    Home
+                </li>
+                <li onclick="addActiveClass(this, 'accountInfo')" class="list-item">
+                    <i class="far fa-user"></i>
+                    My Account
+                </li>
+                <li onclick="addActiveClass(this, 'outTrips')" class="list-item">
+                    <i class="fas fa-barcode"></i>
+                    Our Trips
+                </li>
+                <li onclick="addActiveClass(this, 'document')" class="list-item">
+                    <i class="fas fa-file"></i>
+                    Document
+                </li>
+                <li onclick="addActiveClass(this, 'booking')" class="list-item">
+                    <i class="far fa-chart-bar"></i>
+                    My Booking
+                </li>
+                <li onclick="addActiveClass(this, 'password')" class="list-item">
+                    <i class="fas fa-cog"></i>
+                    Change Password
+                </li>
+                <li onclick="addActiveClass(this, 'payment')" class="list-item">
+                    <i class="far fa-credit-card"></i>
+                    Payment Method
+                </li>
+                <li onclick="addActiveClass(this, 'following')" class="list-item">
+                    <i class="fas fa-heart"></i>
+                    My Following
+                </li>
+                <li onclick="addActiveClass(this, 'reviews')" class="list-item">
+                    <i class="fas fa-comment-dots"></i>
+                    Reviews
+                </li>
+                <li onclick="addActiveClass(this, 'messages')" class="list-item">
+                    <i class="fas fa-comment-alt"></i>
+                    Messages
+                </li>
+
+                <li onclick="addActiveClass(this, 'help')" class="list-item">
+                    <i class="fas fa-globe"></i>
+                    Help Center
+                </li>
+            </ul>
+        </div>
+        <div class="col col-sm-10 offset-2">
+            <div class="content container">
+
+                <div id="home" style="display: block;">
+                    <div class="">
+                        <h4 class="prime-color">Overview</h4>
+                        <div class="card-body">
+
+
+                            <div class="col visa-card">
+                                <strong class="accountStatus">Account Status</strong>
+                                <strong class="status">Pending</strong>
+                            </div>
+
+                            <br>
+
+                            <div class="row p-0 m-0">
+                                <div class="statsContainer col-sm-4">
+                                    <div>
+                                        <small>Total Trips</small>
+                                    </div>
+                                    <br>
+
+                                    <div class="stats">
+                                        <strong>N/A</strong>
+                                        <img src="../public/img/Screen Shot 1399-04-21 at 16.53.25.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="statsContainer col-sm-4">
+                                    <div>
+                                        <small>Total Trips</small>
+                                    </div>
+                                    <br>
+
+                                    <div class="stats">
+                                        <strong>N/A</strong>
+                                        <img src="../public/img/Screen Shot 1399-04-21 at 16.53.25.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="statsContainer col-sm-4">
+                                    <div>
+                                        <small>Total Trips</small>
+                                    </div>
+                                    <br>
+
+                                    <div class="stats">
+                                        <strong>N/A</strong>
+                                        <img src="../public/img/Screen Shot 1399-04-21 at 16.53.25.png" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br>
+                            <br>
+
+                            <div class="row p-0 m-0 statsSelection">
+                                <strong>Statistics</strong>
+                                <div class="form-row align-items-center">
+                                    <div class="col-auto my-1">
+
+                                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div id="chart_div"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="accountInfo" style="display: none;">
+                    <div class="text-right">
+                        <button class="btn btn-primary btn-sm prime-bg">EDIT</button>
+                    </div>
+                    <div class="row col">
+                        <div class="">
+                            <img src="../public/img/1.jpg" height="100px" width="100px" class="img-rounded" alt="">
+                        </div>
+                        <div class="user-info user-info-row">
+                            <h2 class="prime-color">Username</h2>
+                            <small>Company Name</small>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="text-muted">Personal Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Full Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Phone Number</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Nationality</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Date of
+                                        Birth</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-sm-2">Checkbox</div>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <label class="form-check-label" for="gridCheck1">
+                                                Example checkbox
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="outTrips" style="display: none;">
+                    <div class="text-right">
+                        <button class="btn btn-primary btn-sm prime-bg">Add New</button>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="col col-sm-8 tab-pane fade show active" id="home" role="tabpanel"
+                            aria-labelledby="home-tab">
+
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <th class="text-center">Trip</th>
+                                    <th class="text-center">Seat</th>
+                                    <th class="text-center">Availability</th>
+                                    <th class="text-center">Ticket Price</th>
+                                    <th class="text-center">Total</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class=" align-middle">
+                                            <img src="../public/img/1.jpg" height="40px" width="40px" class="" alt="">
+                                            Hiking
+                                        </td>
+                                        <td class="text-center  align-middle">
+                                            <small>24</small>
+                                        </td>
+                                        <td class="text-center align-middle">
+                                            <div class="labelBG-g">
+                                                <small class="labelContent">24 in Stocks</small>
+
+                                            </div>
+                                        </td>
+                                        <td class="text-center  align-middle">
+                                            <small>SAR 29,203</small>
+                                        </td>
+                                        <td class="text-center  align-middle">
+                                            <small>SAR 29,203</small>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td class=" align-middle">
+                                            <img src="../public/img/1.jpg" height="40px" width="40px" class="" alt="">
+                                            Hiking
+                                        </td>
+                                        <td class="text-center  align-middle">
+                                            <small>24</small>
+                                        </td>
+                                        <td class="text-center align-middle">
+                                            <div class="labelBG-r">
+                                                <small class="labelContent">24 in Stocks</small>
+
+                                            </div>
+                                        </td>
+                                        <td class="text-center  align-middle">
+                                            <small>SAR 29,203</small>
+                                        </td>
+                                        <td class="text-center  align-middle">
+                                            <small>SAR 29,203</small>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td class=" align-middle">
+                                            <img src="../public/img/1.jpg" height="40px" width="40px" class="" alt="">
+                                            Hiking
+                                        </td>
+                                        <td class="text-center  align-middle">
+                                            <small>24</small>
+                                        </td>
+                                        <td class="text-center align-middle">
+                                            <div class="labelBG-y">
+                                                <small class="labelContent">24 in Stocks</small>
+
+                                            </div>
+                                        </td>
+                                        <td class="text-center  align-middle">
+                                            <small>SAR 29,203</small>
+                                        </td>
+                                        <td class="text-center  align-middle">
+                                            <small>SAR 29,203</small>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col col-sm-4 quickDetails">
+                            <p class="lead">Quick Details</p>
+
+                            <div class="quickItem">
+                                <div class="iconCircle-p">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="quickInfo col">
+                                    <small class="quickInfoTime">Last 24 hours</small>
+                                    <small class="quickInfoNew">290 Customers</small>
+                                </div>
+                            </div>
+
+                            <div class="quickItem">
+                                <div class="iconCircle-g">
+                                    <i class="fas fa-sync"></i>
+                                </div>
+                                <div class="quickInfo col">
+                                    <small class="quickInfoTime">Awaiting Process</small>
+                                    <small class="quickInfoNew">290 orders</small>
+                                </div>
+                            </div>
+
+                            <div class="quickItem">
+                                <div class="iconCircle-w">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="quickInfo col">
+                                    <small class="quickInfoTime">Low in Stocks</small>
+                                    <small class="quickInfoNew">290 trips</small>
+                                </div>
+                            </div>
+
+                            <div class="quickItem">
+                                <div class="iconCircle-r">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <div class="quickInfo col">
+                                    <small class="quickInfoTime">Out Stocks</small>
+                                    <small class="quickInfoNew">290 trips</small>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="booking" style="display: none;">
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true">Scheduled Trips</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                aria-controls="profile" aria-selected="false">Past Trips</a>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <br>
+                            <br>
+                            <br>
+                            <!-- <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="align-middle"></th>
+                                        <th class="align-middle">Trip</th>
+                                        <th class="align-middle">Seat</th>
+                                        <th class="align-middle">Date</th>
+                                        <th class="align-middle">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="../public/img/1.jpg" height="70px" width="70px" class="" alt="">
+                                        </td>
+                                        <td class="align-middle">Trip</td>
+                                        <td class="align-middle">Seat</td>
+                                        <td class="align-middle">Date</td>
+                                        <td class="align-middle">Total</td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <th class="align-middle"></th>
+                                    <th class="text-center">Trip</th>
+                                    <th class="text-center">Seat</th>
+                                    <th class="text-center">Date</th>
+                                    <th class="text-center">Total</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="">
+                                            <img src="../public/img/1.jpg" height="80px" width="80px" class="" alt="">
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="">
+                                            <img src="../public/img/1.jpg" height="80px" width="80px" class="" alt="">
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="">
+                                            <img src="../public/img/1.jpg" height="80px" width="80px" class="" alt="">
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                            <br>
+                            <br>
+                            <br>
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <th class="align-middle"></th>
+                                    <th class="text-center">Trip</th>
+                                    <th class="text-center">Seat</th>
+                                    <th class="text-center">Date</th>
+                                    <th class="text-center">Total</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="">
+                                            <img src="../public/img/1.jpg" height="80px" width="80px" class="" alt="">
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="">
+                                            <img src="../public/img/1.jpg" height="80px" width="80px" class="" alt="">
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="">
+                                            <img src="../public/img/1.jpg" height="80px" width="80px" class="" alt="">
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <small>desc</small>
+                                        </td>
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="password" style="display: none;">
+                    <div class="text-right">
+                        <button class="btn btn-primary btn-sm prime-bg">EDIT</button>
+                    </div>
+                    <div class="row col">
+                        <div class="">
+                            <img src="../public/img/1.jpg" height="100px" width="100px" class="img-rounded" alt="">
+                        </div>
+                        <div class="user-info user-info-row">
+                            <h2 class="prime-color">Username</h2>
+                            <small>Company Name</small>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="text-muted">Password Settings</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Current
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">New Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Confirm
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3">
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="payment" style="display: none;">
+                    <div class="">
+                        <h4 class="prime-color">Payment Methods</h4>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1 text-muted">Card Number</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Card Number">
+                                </div>
+                                <label for="exampleInputEmail1 text-muted">Expiry Date</label>
+                                <div class="form-group row col">
+                                    <select type="email" class="form-control col col-sm-4"></select>
+                                    &nbsp;
+                                    <select type="email" class="form-control col col-sm-4"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Name on Card</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        placeholder="Name on Card">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary prime-bg btn-block btn-lg">Save</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="col visa-card">
+                        <div class="row col">
+                            <div class="">
+                                <img src="../public/img/1.jpg" height="100px" width="100px" class="img-rounded" alt="">
+                            </div>
+                            <div class="col user-info user-info-row">
+                                <H5>card number</H5>
+                                <H5>User Name</H5>
+                                <H5>EXPIRED</H5>
+                            </div>
+                            <div class="delete-div">
+                                <h6>
+                                    DELETE
+                                    <i class="fa fa-trash"></i>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="following" style="display: none;">
+                    <h3>My Following</h3>
+
+                    <div class="">
+                        <div class="">
+                            <!-- <i class="fa fa-search"></i> -->
+                            <input type="text" class="form-control col" placeholder="Search for a contact ...">
+                        </div>
+                        <hr>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle">
+                                        <img src="../public/img/1.jpg" height="50px" width="50px" class="img-rounded"
+                                            alt="">
+                                    </td>
+                                    <td class="align-middle">
+                                        <h4>name name</h4>
+                                        <small>desc</small>
+                                    </td>
+                                    <td class="align-middle text-right">
+                                        <button class="btn btn-primary btn-sm prime-bg">Follow</button>
+                                        <button class="btn btn-primary btn-sm prime-bg-clear">Message</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">
+                                        <img src="../public/img/1.jpg" height="50px" width="50px" class="img-rounded"
+                                            alt="">
+                                    </td>
+                                    <td class="align-middle">
+                                        <h4>name name</h4>
+                                        <small>desc</small>
+                                    </td>
+                                    <td class="align-middle text-right">
+                                        <button class="btn btn-primary btn-sm prime-bg">Follow</button>
+                                        <button class="btn btn-primary btn-sm prime-bg-clear">Message</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">
+                                        <img src="../public/img/1.jpg" height="50px" width="50px" class="img-rounded"
+                                            alt="">
+                                    </td>
+                                    <td class="align-middle">
+                                        <h4>name name</h4>
+                                        <small>desc</small>
+                                    </td>
+                                    <td class="align-middle text-right">
+                                        <button class="btn btn-primary btn-sm prime-bg">Follow</button>
+                                        <button class="btn btn-primary btn-sm prime-bg-clear">Message</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="reviews" style="display: none;">
+                    <h6>Reviews</h6>
+                    <div id="like_button_container"></div>
+                    <div class="">
+                        <div class="">
+                            <!-- <i class="fa fa-search"></i> -->
+                            <input type="text" class="form-control col" placeholder="Search for a contact ...">
+                        </div>
+                        <hr>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle">
+                                        <img src="../public/img/1.jpg" height="50px" width="50px" class="img-rounded"
+                                            alt="">
+                                    </td>
+                                    <td class="align-middle">
+                                        <h4>name name</h4>
+                                        <small>desc</small>
+                                    </td>
+                                    <td class="align-middle text-right">
+                                        <button class="btn btn-primary btn-sm prime-bg-clear">Write a
+                                            review</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3">
+
+                                        <label>Select Rating*</label>
+                                        <div class="rating-container">
+                                            <div class="star-dev">
+                                                <i class="far fa-star"></i>
+                                                <small>Poor</small>
+                                            </div>
+                                            <div class="star-dev">
+                                                <i class="far fa-star"></i>
+                                                <small>Fair</small>
+                                            </div>
+                                            <div class="star-dev">
+                                                <i class="far fa-star"></i>
+                                                <small>Average</small>
+                                            </div>
+                                            <div class="star-dev">
+                                                <i class="far fa-star"></i>
+                                                <small>Good</small>
+                                            </div>
+                                            <div class="star-dev">
+                                                <i class="far fa-star"></i>
+                                                <small>Great</small>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="label-control">write a review*</label>
+                                            <textarea name="" id="" rows="5" class="form-control"></textarea>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-primary btn-sm prime-bg">Submit</button>
+                                            <button class="btn btn-primary btn-sm prime-bg-clear">Cancel</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="messages" style="display: none;">
+                    <h1>Messages</h1>
+                    <!-- <div id="flip" class="me">Click to slide the panel down or up</div>
+                    <div id="panel">Hello world!</div> -->
+
+                    <div class="chatContainer" id="chatContainer">
+                        <div class="row col p-0 m-0">
+                            <div class="col col-sm-3 messageList">
+                                <div class="searchDiv p-1" id="searchDiv">
+                                    <input type="text" placeholder="Search ..." class="form-control col col-sm-12" />
+                                </div>
+                                <div class="listContent">
+                                    <div class="messageContainer">
+                                        <div class="messageContainerHeader p-2 bgGray">
+                                            <img src="../public/img/2.png" height="50px" width="50px" alt="">
+                                            <div class="userInfoDiv">
+                                                <div class="userNameDiv">
+                                                    <strong>username</strong>
+                                                    <small>01:50</small>
+                                                </div>
+                                                <small>lksdlkslfkjl ....</small>
+                                            </div>
+                                        </div>
+                                        <div class="messageContainerHeader p-2">
+                                            <img src="../public/img/2.png" height="50px" width="50px" alt="">
+                                            <div class="userInfoDiv">
+                                                <div class="userNameDiv">
+                                                    <strong>username</strong>
+                                                    <small>01:50</small>
+                                                </div>
+                                                <small>lksdlkslfkjl ....</small>
+                                            </div>
+                                        </div>
+                                        <div class="messageContainerHeader p-2">
+                                            <img src="../public/img/2.png" height="50px" width="50px" alt="">
+                                            <div class="userInfoDiv">
+                                                <div class="userNameDiv">
+                                                    <strong>username</strong>
+                                                    <small>01:50</small>
+                                                </div>
+                                                <small>lksdlkslfkjl ....</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col messageContainer">
+                                <div id="messageContainerHeader" class="messageContainerHeader p-1">
+                                    <img src="../public/img/2.png" height="50px" width="50px" alt="">
+                                    <div class="userInfoDiv">
+                                        <strong>username</strong>
+                                        <small>Account Manager</small>
+                                    </div>
+                                </div>
+                                <div class="messageContainerBody" id="messageContainerBody">
+                                    <div class="senderBox">
+                                        <strong>HelloEvery database-related application has to deal with CRUD
+                                            operations. It is used to store and retrieve data from the database. The
+                                            CRUD operations </strong>
+                                    </div>
+                                    <div class="receiverBoxContainer">
+                                        <div class="receiverBox">
+                                            <strong>welcome</strong>
+                                            <br>
+                                            <small class="text-right">01:50</small>
+                                        </div>
+                                    </div>
+                                    <div class="senderBox">
+                                        <strong>HelloEvery database-related application has to deal with CRUD
+                                            operations. It is used to store and retrieve data from the database. The
+                                            CRUD operations </strong>
+                                        <br>
+                                        <small class="text-right">01:50</small>
+                                    </div>
+                                    <div class="senderBox">
+                                        <strong>HelloEvery database-related application has to deal with CRUD
+                                            operations. It is used to store and retrieve data from the database. The
+                                            CRUD operations </strong>
+                                    </div>
+                                    <div class="senderBox">
+                                        <strong>HelloEvery database-related application has to deal with CRUD
+                                            operations. It is used to store and retrieve data from the database. The
+                                            CRUD operations </strong>
+                                    </div>
+                                </div>
+                                <div class="messageContainerFooter p-1" id="messageContainerFooter">
+                                    <form action="#">
+                                        <input type="text" class="form-control col" />
+                                        <div class="iconDiv">
+                                            <a href="#">
+                                                <i class="fa fa-link"></i>
+                                                <i class="fa fa-image"></i>
+                                                <i class="fa fa-smile"></i>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="document" style="display: none;">
+                    <div class="col col-sm-4">
+                        <h1>Account Type</h1>
+
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Organization</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Single Guide</label>
+                        </div>
+
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col col-sm-4">
+                        <h1>Document</h1>
+                        <form action="#">
+                            <div class="form-group">
+                                <label for="other">Commercial Register</label>
+                                <input type="file" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="other">Guide License</label>
+                                <input type="file" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="other">Other</label>
+                                <input type="file" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary prime-bg btn-block btn-lg">Save</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="help" style="display: none;">
+                    <h1>Help</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/custom/js.js"></script>
+    <script src="../public/custom/jquery.js"></script>
+    <script src="../public/custom/chat.js"></script>
+
+
+
+    <!-- Load our React component. -->
+
+</body>
+
+</html>
